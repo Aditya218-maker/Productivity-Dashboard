@@ -1,0 +1,681 @@
+:root {
+  --primary:      #0d0f14;     
+  --primary-soft: #161a24;      
+  --sec:          #f0f4ff;      
+  --tri:          #3d6bff;      
+  --extra:        #2952e3;    
+
+  --bg:           var(--primary);
+  --bg-panel:     var(--primary-soft);
+  --text:         #e8edf8;
+  --text-muted:   #8892aa;
+  --accent:       var(--tri);
+  --accent-deep:  var(--extra);
+  --accent-glow:  rgba(61, 107, 255, 0.45);
+  --danger:       #ff4060;
+  --danger-glow:  rgba(255, 64, 96, 0.4);
+  --success:      #22d3a5;
+
+  --border:       rgba(255, 255, 255, 0.08);
+  --shadow-soft:  0 4px 24px rgba(0, 0, 0, 0.45);
+  --shadow-glow:  0 0 18px var(--accent-glow);
+  --shadow-danger: 0 0 14px var(--danger-glow);
+
+  --radius-sm:  8px;
+  --radius-md:  16px;
+  --radius-lg:  24px;
+
+  --ease: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@font-face {
+  font-family: bold;
+  font-weight: 700;
+  src: url(./Aeonik-Bold.ttf.otf);
+}
+@font-face {
+  font-family: regular;
+  font-weight: 500;
+  src: url(./Aeonik-Regular.ttf);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: regular, 'Segoe UI', sans-serif;
+  color: var(--text);
+}
+
+#main {
+  height: 100%;
+  width: 100%;
+  background-color: var(--bg);
+}
+
+section.allElems {
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+  padding-top: 10px;
+  background-color: var(--bg);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 15px;
+  position: absolute;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.allElems header {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  height: 230px;
+  width: 100%;
+  background: url(https://i.pinimg.com/1200x/4d/0d/73/4d0d73a914b8748750c42c92040dda69.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: var(--radius-lg);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 20px;
+  -webkit-box-shadow: var(--shadow-danger);
+          box-shadow: var(--shadow-danger);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
+  border: 1.5px solid var(--danger);
+}
+header .header1 h1 { font-size: 30px; }
+.header1 h2         { font-size: 20px; }
+.header1 h3         { font-size: 20px; }
+header .header2 h1  { font-size: 40px; }
+
+.anim {
+  height: 230px;
+  width: 100%;
+  border-radius: var(--radius-lg);
+  background: url(https://i.pinimg.com/originals/06/ff/bb/06ffbb14255b4dfc870802bceb219c29.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  -webkit-box-shadow: var(--shadow-danger);
+          box-shadow: var(--shadow-danger);
+  border: 1.5px solid var(--danger);
+}
+
+.allElems .allFeatures {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 30px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 500;
+}
+
+.elem {
+  background-color: var(--bg-panel);
+  height: 300px;
+  width: 300px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  -webkit-transition: var(--ease);
+  -o-transition: var(--ease);
+  transition: var(--ease);
+  cursor: pointer;
+  -webkit-box-shadow: var(--shadow-glow);
+          box-shadow: var(--shadow-glow);
+  border: 1.5px solid var(--border);
+}
+.elem:hover {
+  -webkit-box-shadow: 0 0 28px var(--accent-glow), var(--shadow-soft);
+          box-shadow: 0 0 28px var(--accent-glow), var(--shadow-soft);
+  border-color: var(--accent);
+  -webkit-transform: translateY(-3px);
+      -ms-transform: translateY(-3px);
+          transform: translateY(-3px);
+}
+.elem img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.elem h2 {
+  font-size: 30px;
+  font-weight: 600;
+  position: absolute;
+  top: 4%;
+  left: 3%;
+  text-align: right;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+}
+.elem:active { scale: 0.97; }
+
+.fullElem {
+  height: 100%;
+  width: 100%;
+  background-color: var(--accent-deep);
+  padding: 20px;
+  font-size: 40px;
+  display: none;
+  position: absolute;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: lighter;
+}
+
+.back {
+  position: absolute;
+  right: 5%;
+  color: var(--text);
+  background-color: var(--danger);
+  border: none;
+  border-radius: 30px;
+  padding: 15px 20px;
+  font-size: 25px;
+  font-weight: 900;
+  -webkit-transition: var(--ease);
+  -o-transition: var(--ease);
+  transition: var(--ease);
+  -webkit-box-shadow: var(--shadow-danger);
+          box-shadow: var(--shadow-danger);
+}
+.back:active { scale: 0.97; }
+
+.back {
+  font-size: 10px;
+  padding: 5px 5px;
+}
+
+.ToDoPage {
+  font-size: 20px;
+  background-color: var(--bg);
+}
+.ToDoPage .todo-box {
+  margin-top: 3%;
+  border-radius: var(--radius-lg);
+  height: 70%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: var(--bg);
+}
+.ToDoPage .todo-box .addtask {
+  width: 28%;
+  border-radius: var(--radius-lg);
+  border: 1.5px solid var(--border);
+  -webkit-box-shadow: var(--shadow-glow);
+          box-shadow: var(--shadow-glow);
+  height: 100%;
+  background-color: var(--accent-deep);
+}
+.ToDoPage .todo-box .alltask {
+  width: 70%;
+  border-radius: var(--radius-lg);
+  height: 100%;
+  background-color: var(--bg-panel);
+  border: 1.5px solid var(--border);
+  -webkit-box-shadow: var(--shadow-glow);
+          box-shadow: var(--shadow-glow);
+}
+.ToDoPage .todo-box .addtask form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 30px;
+}
+.todo-box .addtask form #taskinput {
+  width: 100%;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--border);
+  font-size: 25px;
+  padding: 10px 10px;
+  background-color: var(--sec);
+  outline: none;
+  margin-bottom: 20px;
+  color: var(--primary);
+  -webkit-transition: var(--ease);
+  -o-transition: var(--ease);
+  transition: var(--ease);
+}
+.todo-box .addtask form #taskinput:focus {
+  border-color: var(--accent);
+  -webkit-box-shadow: 0 0 0 3px var(--accent-glow);
+          box-shadow: 0 0 0 3px var(--accent-glow);
+}
+.todo-box .addtask form textarea {
+  width: 100%;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--border);
+  font-size: 25px;
+  padding: 10px 10px;
+  background-color: var(--sec);
+  outline: none;
+  margin-bottom: 20px;
+  color: var(--primary);
+  -webkit-transition: var(--ease);
+  -o-transition: var(--ease);
+  transition: var(--ease);
+}
+.todo-box .addtask form textarea:focus {
+  border-color: var(--accent);
+  -webkit-box-shadow: 0 0 0 3px var(--accent-glow);
+          box-shadow: 0 0 0 3px var(--accent-glow);
+}
+.todo-box .addtask form button {
+  width: 100%;
+  border-radius: var(--radius-md);
+  border: none;
+  font-size: 20px;
+  padding: 10px 10px;
+  font-weight: 900;
+  outline: none;
+  margin-bottom: 20px;
+  -webkit-transition: var(--ease);
+  -o-transition: var(--ease);
+  transition: var(--ease);
+  background-color: var(--accent);
+  color: var(--text);
+}
+.todo-box .addtask form button:hover { background-color: var(--tri); }
+.todo-box .addtask form button:active { scale: 0.97; }
+
+.ToDoPage .todo-box .alltask {
+  width: 70%;
+  border-radius: var(--radius-lg);
+  height: 100%;
+  background-color: var(--bg-panel);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 30px;
+}
+
+.task {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  background-color: var(--sec);
+  padding: 15px 15px;
+  border-radius: var(--radius-md);
+  margin-bottom: 10px;
+  overflow: auto;
+  -webkit-transition: var(--ease);
+  -o-transition: var(--ease);
+  transition: var(--ease);
+}
+.task:hover {
+  -webkit-box-shadow: 0 4px 16px var(--accent-glow);
+          box-shadow: 0 4px 16px var(--accent-glow);
+}
+.task h5 {
+  color: var(--primary);
+  font-size: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 12px;
+}
+.task i {
+  font-size: 30px;
+  color: var(--primary);
+}
+.task h5 span {
+  background-color: var(--accent);
+  padding: 10px 10px;
+  border-radius: var(--radius-sm);
+  color: var(--sec);
+  font-size: 15px;
+}
+.ri-mark-pen-fill { font-size: 14px; }
+
+.task h5 span.true  { opacity: 1; }
+.task h5 span.false { opacity: 0; }
+
+.task button {
+  padding: 15px 15px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: var(--danger);
+  color: var(--text);
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 10px;
+  font-weight: 900;
+  -webkit-transition: var(--ease);
+  -o-transition: var(--ease);
+  transition: var(--ease);
+  -webkit-box-shadow: var(--shadow-danger);
+          box-shadow: var(--shadow-danger);
+}
+.task button:hover  { 
+  background-color: #ff2046; 
+}
+.task button:active { 
+  scale: 0.97; 
+}
+
+.markImp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding: 10px 10px;
+  width: 100%;
+  margin-bottom: 20px;
+  gap: 30px;
+  font-size: medium;
+}
+.markImp input { scale: 2; accent-color: var(--accent); }
+
+.dailyPlanPage {
+  background-color: var(--bg);
+}
+.dailyPlanPage h2 { font-size: 50px; }
+
+.dailyPlanPage .day-planner {
+  background-color: var(--bg-panel);
+  border: 1.5px solid var(--border);
+  -webkit-box-shadow: var(--shadow-glow);
+          box-shadow: var(--shadow-glow);
+  height: 85%;
+  width: 100%;
+  margin-top: 40px;
+  border-radius: var(--radius-md);
+  padding: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  overflow: auto;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 10px;
+}
+.dailyPlanPage .day-planner .day-planner-time {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 49%;
+  margin-bottom: 10px;
+}
+.day-planner .day-planner-time p {
+  position: absolute;
+  top: 5%;
+  left: 1%;
+  color: var(--text);
+  font-size: 13px;
+  opacity: 0.7;
+}
+.day-planner .day-planner-time input {
+  width: 100%;
+  padding: 20px 40px;
+  background: -o-linear-gradient(315deg, var(--accent-deep), var(--accent));
+  background: linear-gradient(135deg, var(--accent-deep), var(--accent));
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border);
+  font-size: 30px;
+  padding-top: 50px;
+  color: var(--text);
+  -webkit-transition: var(--ease);
+  -o-transition: var(--ease);
+  transition: var(--ease);
+}
+.day-planner .day-planner-time input:focus {
+  outline: none;
+  border-color: var(--accent);
+  -webkit-box-shadow: 0 0 0 3px var(--accent-glow);
+          box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+.MotivPage {
+  position: relative;
+  background: var(--bg);
+}
+.MotivPage .motivation-conatiner {
+  height: 400px;
+  width: 60%;
+  background: var(--bg-panel);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: var(--radius-lg);
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+.MotivPage .motivation-conatiner::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: var(--accent);
+  border-radius: var(--radius-lg);
+  scale: 1.15;
+  -webkit-filter: blur(50px);
+          filter: blur(50px);
+  z-index: 8;
+  opacity: 0.35;
+}
+.MotivPage .motivation-conatiner .motivation-wrapper {
+  z-index: 10;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: -o-linear-gradient(315deg, var(--bg-panel), var(--primary-soft));
+  background: linear-gradient(135deg, var(--bg-panel), var(--primary-soft));
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 10px;
+}
+.motivation-wrapper .motivation1 {
+  border-radius: var(--radius-sm);
+  padding: 10px 20px;
+  background-color: rgba(61, 107, 255, 0.12);
+  -webkit-box-shadow: 0 0 40px var(--accent-glow);
+          box-shadow: 0 0 40px var(--accent-glow);
+  border: 1.5px solid var(--border);
+}
+.motivation-wrapper .motivation1 h2 {
+  font-size: 30px;
+  font-weight: 400;
+  color: var(--accent);
+}
+.motivation-wrapper .motivation2 { padding: 10px 50px; }
+
+.motivation2 h4 {
+  font-size: 40px;
+  font-family: fantasy;
+  margin-top: 25px;
+  text-shadow: 0 0 18px var(--accent-glow);
+  color: var(--text);
+}
+.motivation3 {
+  padding: 10px 10px;
+  position: relative;
+}
+.motivation3 h2 {
+  font-size: 25px;
+  margin-top: 30px;
+  text-align: right;
+  color: var(--accent);
+  font-family: cursive;
+  text-shadow: 0 0 12px var(--accent-glow);
+}
+.motivation3 img {
+  position: absolute;
+  margin-top: 30px;
+}
+
+.TimerPage {
+  position: relative;
+  background-color: var(--bg);
+}
+.TimerPage h1 {
+  font-size: 30px;
+  font-family: fantasy;
+  color: var(--text);
+}
+.TimerPage .pomo-timer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+}
+.pomo-timer h2 {
+  font-size: 120px;
+  color: var(--accent);
+  text-shadow: 0 0 40px var(--accent-glow);
+  letter-spacing: 4px;
+}
+.pomo-timer button {
+  border: 1.5px solid var(--border);
+  padding: 10px 10px;
+  border-radius: var(--radius-md);
+  font-size: medium;
+  font-weight: 700;
+  margin: 10px;
+  -webkit-transition: var(--ease);
+  -o-transition: var(--ease);
+  transition: var(--ease);
+  background-color: var(--accent);
+  color: var(--text);
+}
+.pomo-timer button:hover {
+  background-color: var(--accent-deep);
+  -webkit-box-shadow: var(--shadow-glow);
+          box-shadow: var(--shadow-glow);
+}
+.pomo-timer button:active { scale: 0.94; }
+
+.TimerPage .session {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  color: var(--success);
+  padding: 10px 10px;
+  border-radius: var(--radius-sm);
+  -webkit-box-shadow: 0 0 20px rgba(34, 211, 165, 0.35);
+          box-shadow: 0 0 20px rgba(34, 211, 165, 0.35);
+  text-shadow: 0 0 12px rgba(34, 211, 165, 0.5);
+  border: 1.5px solid var(--success);
+}
+
+.theme {
+  position: absolute;
+  bottom: 32%;
+  left: 1%;
+  padding: 10px 10px;
+  border-radius: var(--radius-sm);
+  -webkit-box-shadow: var(--shadow-danger);
+          box-shadow: var(--shadow-danger);
+  border: 1.5px solid var(--danger);
+  -webkit-transition: var(--ease);
+  -o-transition: var(--ease);
+  transition: var(--ease);
+  background-color: var(--bg-panel);
+}
+.theme h4 {
+  font-size: 15px;
+  font-family: monospace;
+  font-weight: 900;
+  color: var(--danger);
+  -webkit-transition: var(--ease);
+  -o-transition: var(--ease);
+  transition: var(--ease);
+}
+.theme:hover {
+  -webkit-box-shadow: 0 0 20px var(--danger-glow);
+          box-shadow: 0 0 20px var(--danger-glow);
+}
+.theme:active { scale: 0.95; }.example {
+    display: -ms-grid;
+    display: grid;
+    -webkit-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    background: -webkit-gradient(linear, left top, left bottom, from(white), to(black));
+    background: -o-linear-gradient(top, white, black);
+    background: linear-gradient(to bottom, white, black);
+}

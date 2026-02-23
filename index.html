@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productivity Dashboard</title>
+    <link rel="shortcut icon" href="./PD.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="main">
+        <section class="allElems">
+            <div class="anim">
+    
+            </div>
+            <header>
+                <div class="header1">
+                    <h2>20 march, 2050</h2>
+                    <h1>Sunday, 12:00 am</h1>
+                    <h3>Miami</h3>
+                </div>
+                <div class="header2">
+                    <h2>21°C</h2>
+                    <h1>hazy</h1>   
+                    <h3 class="humidity">Humidity: 87%</h3>
+                </div>
+            </header>
+            <div class="allFeatures">
+                <div class="todo elem" id="0">
+                    <img src="https://i.pinimg.com/1200x/cc/4b/e9/cc4be9dbe0ac172c7ea5bfeaff12ad42.jpg" alt="">x
+                    <h2>To Do List</h2>
+                </div>
+                <div class="daily elem" id="1">
+                    <img src="https://i.pinimg.com/1200x/da/cc/ac/daccacff89b917e28b8652e07a70101b.jpg" alt="">
+                    <h2>Daily Planner</h2>
+                </div>
+                <div class="motiv elem" id="2">
+                    <img src="https://i.pinimg.com/736x/26/c8/43/26c843df1f3ec8972b9505cf330f1c16.jpg" alt="">
+                    <h2>Quotes</h2>
+                </div>
+                <div class="pomo elem" id="3">
+                    <img src="https://i.pinimg.com/736x/26/8d/39/268d39b7afddba75f8c007957e6be5a0.jpg" alt="">
+                    <h2>Pomodoro Timer</h2>
+                </div>
+            </div>
+        </section>
+        <section class="fullElem ToDoPage">
+            <button class="back" id="0">close</button>
+            <h1>Your Personalised To-Do list</h1>
+            <div class="todo-box">
+                <div class="addtask">
+                    <form>
+                        <input id="taskinput" type="text" placeholder="Enter tasks">
+                        <textarea placeholder="Enter Details" id=""></textarea>
+                        <div class="markImp">
+                            <input type="checkbox" name="" id="check">
+                            <label for="checkbox">Mark As Important</label>
+                        </div>
+                        <button>Add a Task</button>
+                    </form>
+                </div>
+                <div class="alltask">
+
+                </div>
+            </div>
+        </section>
+        <section class="fullElem dailyPlanPage">
+            <button class="back" id="1">close</button>
+            <h2>Plan Your Day</h2>
+            <div class="day-planner">
+                <div class="day-planner-time">
+                    <p>7:00</p>
+                    <input type="text" placeholder="...">
+                </div>
+                <div class="day-planner-time">
+                    <p>8:00</p>
+                    <input type="text" placeholder="...">
+                </div>
+            </div>
+
+        </section>
+        <section class="fullElem MotivPage">
+            <button class="back" id="2">close</button>
+            <div class="motivation-conatiner">
+                <div class="motivation-wrapper">
+                    <div class="motivation1">
+                        <h2>Quote of the Day</h2>
+                    </div>
+                    <div class="motivation2">
+                        <h4>"Peace is not absence of conflict, it is the ability to handle conflict by peaceful means."
+                        </h4>
+                    </div>
+                    <div class="motivation3">
+                        <img src="/icons8-quote-40.png" alt="">
+                        <h2>-Ronald Reagan</h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="fullElem TimerPage">
+            <button class="back" id="3">close</button>
+            <h1>Study with ME!</h1>
+            <h4 class="session"> Work Session</h4>
+            <div class="pomo-timer">
+                <h2>25:00</h2>
+                <button class="start-timer">START</button>
+                <button class="pause-timer">PAUSE</button>
+                <button class="Reset-timer">RESET</button>
+            </div>
+        </section>
+
+        <div class="theme">
+            <h4>Change theme</h4>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
