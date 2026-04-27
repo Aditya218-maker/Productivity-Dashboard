@@ -16,7 +16,6 @@ A modern and responsive productivity dashboard designed to help users manage tas
 * HTML
 * CSS
 * JavaScript
-* React.js
 
 ## Purpose
 
